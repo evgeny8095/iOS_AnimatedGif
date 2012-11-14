@@ -6,7 +6,7 @@ Animated GIF library for iPhone. Based on original work by Martin van Spanje.
 Original weblog post
 --------------------
 
-[http://blog.stijnspijker.nl/2009/07/animated-and-transparent-gifs-for-iphone-made-easy/](Animated and transparent GIF’s for iPhone made easy!) on http://blog.stijnspijker.nl/
+[Animated and transparent GIF’s for iPhone made easy! on http://blog.stijnspijker.nl/](http://blog.stijnspijker.nl/2009/07/animated-and-transparent-gifs-for-iphone-made-easy/)
 
 I recently started developing for iPhone, and I was looking to include some simple animations into my applications, like a typical AJAX loading GIF when I’m waiting for my stream of data to come in.
 
