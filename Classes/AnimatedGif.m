@@ -143,7 +143,7 @@ static AnimatedGif * instance;
 	
     // Copy the read bytes into a local buffer on the stack
     // For easy byte access in the following lines.
-    int length = [GIF_buffer length];
+    unsigned long length = [GIF_buffer length];
 	unsigned char aBuffer[length];
 	[GIF_buffer getBytes:aBuffer length:length];
 	
@@ -437,7 +437,7 @@ static AnimatedGif * instance;
 }
 
 /* Puts (int) length into the GIF_buffer from file, returns whether read was succesfull */
-- (bool) GIFGetBytes: (int) length
+- (bool) GIFGetBytes: (long) length
 {
     if (GIF_buffer != nil)
     {
@@ -447,7 +447,7 @@ static AnimatedGif * instance;
     
 	if ([GIF_pointer length] >= dataPointer + length) // Don't read across the edge of the file..
     {
-		GIF_buffer = [GIF_pointer subdataWithRange:NSMakeRange(dataPointer, length)];
+		GIF_buffer = [[GIF_pointer subdataWithRange:NSMakeRange(dataPointer, length)] mutableCopy];
         dataPointer += length;
 		return YES;
 	}
@@ -458,7 +458,7 @@ static AnimatedGif * instance;
 }
 
 /* Skips (int) length bytes in the GIF, faster than reading them and throwing them away.. */
-- (bool) GIFSkipBytes: (int) length
+- (bool) GIFSkipBytes: (long) length
 {
     if ([GIF_pointer length] >= dataPointer + length)
     {

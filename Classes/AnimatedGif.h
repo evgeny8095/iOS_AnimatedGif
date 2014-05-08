@@ -79,8 +79,8 @@
 - (void) decodeGIF:(NSData *)GIF_Data;
 - (void) GIFReadExtensions;
 - (void) GIFReadDescriptor;
-- (bool) GIFGetBytes:(int)length;
-- (bool) GIFSkipBytes: (int) length;
+- (bool) GIFGetBytes:(long)length;
+- (bool) GIFSkipBytes: (long) length;
 - (NSMutableData*) getFrameAsDataAtIndex:(int)index;
 - (UIImage*) getFrameAsImageAtIndex:(int)index;
 - (UIImageView*) getAnimation;

@@ -1,5 +1,5 @@
 //
-//  AnimatedGifExampleViewController.h
+//  AnimatedGifExampleAppDelegate.h
 //  AnimatedGifExample
 //
 //  Created by Stijn Spijker on 05-07-09.
@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AnimatedGifExampleViewController : UIViewController
+@interface AppDelegate : NSObject <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow * window;
 
 @end
 
