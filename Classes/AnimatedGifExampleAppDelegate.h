@@ -15,8 +15,8 @@
     AnimatedGifExampleViewController *viewController;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet AnimatedGifExampleViewController *viewController;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet AnimatedGifExampleViewController *viewController;
 
 @end
 

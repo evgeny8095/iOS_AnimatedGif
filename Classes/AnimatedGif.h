@@ -40,8 +40,8 @@
     NSURL *url;
 }
 
-@property (nonatomic, retain) UIImageView *uiv;
-@property (nonatomic, retain) NSURL *url;
+@property (nonatomic, strong) UIImageView *uiv;
+@property (nonatomic, strong) NSURL *url;
 
 @end
 
@@ -71,7 +71,7 @@
     UIImageView *imageView;
 }
 
-@property (nonatomic, retain) UIImageView* imageView;
+@property (nonatomic, strong) UIImageView* imageView;
 @property bool busyDecoding;
 
 - (void) addToQueue: (AnimatedGifQueueObject *) agqo;
