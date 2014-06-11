@@ -26,7 +26,7 @@ static CGRect urlImageViewFrame = {{160.0f, 194.0f},{160.0f, 180.0f}};
     firstAnimation.frame =              fileImageViewFrame;
     
     // Second example, through HTTP
-    NSURL 		* secondUrl = 			[NSURL URLWithString:@"http://www.gifs.net/Animation11/Food_and_Drinks/Fruits/Apple_jumps.gif"];
+    NSURL 		* secondUrl = 			[NSURL URLWithString:@"http://i.imgur.com/vnwRc8V.gif"];
     UIImageView * secondAnimation = 	[AnimatedGif getAnimationForGifAtUrl: secondUrl];
     secondAnimation.frame =             urlImageViewFrame;
     
