@@ -11,8 +11,8 @@
 #import "AnimatedGifExampleViewController.h"
 #import "AnimatedGif.h"
 
-static CGRect fileImageViewFrame = {{0.0f, 194.0f},{160.0f, 180.0f}};
-static CGRect urlImageViewFrame = {{160.0f, 194.0f},{160.0f, 180.0f}};
+static CGRect fileImageViewFrame = {{10.0f, 194.0f},{140.0f, 180.0f}};
+static CGRect urlImageViewFrame = {{170.0f, 194.0f},{140.0f, 180.0f}};
 
 @implementation AnimatedGifExampleViewController
 
