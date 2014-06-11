@@ -28,6 +28,14 @@ Example of use
     // Add both examples to the view.
 	[self.view addSubview:localAnimation];
 	[self.view addSubview:remoteAnimation];
+	
+Now also available as CocoaPod
+------------------------------
+Since CocoaPods have become more popular, this library has been added as a pod as well. You can include the following in your Podfile:
+
+```Ruby
+ pod iOS_AnimatedGif
+```
 
 License
 ---------
