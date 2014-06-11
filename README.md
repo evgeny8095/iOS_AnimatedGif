@@ -17,23 +17,30 @@ The code worked, Martin stated it needed to be checked and optimized. So I went 
 Example of use
 --------------
 
-    // First example, a local file
-    NSURL* firstUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"apple_logo_animated" ofType:@"gif"]];
-    UIImageView * firstAnimation = [AnimatedGif getAnimationForGifAtUrl: firstUrl];
- 
-    // Second example, through HTTP
-    NSURL * secondUrl = [NSURL URLWithString:@"http://www.gifs.net/Animation11/Food_and_Drinks/Fruits/Apple_jumps.gif"];
-    UIImageView * secondAnimation = [AnimatedGif getAnimationForGifAtUrl: secondUrl];
- 
-    // Add them to the view.
-    [theFirstAnimatedGif addSubview:firstAnimation];
-    [theSecondAnimatedGif addSubview:secondAnimation];
+    /* First example, a local file */
+    NSURL *localUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"apple_logo_animated" ofType:@"gif"]];
+    UIImageView *localAnimation = [AnimatedGif getAnimationForGifAtUrl: localUrl];
+    
+    // For local files (that are loaded immediatly) you can request the size
+    localAnimation.frame = CGRectMake(10.0f, 194.0f, localAnimation.image.size.width, localAnimation.image.size.height);
+    
+
+    /* Second example, through HTTP */
+    NSURL *remoteUrl = [NSURL URLWithString:@"http://i.imgur.com/vnwRc8V.gif"];
+    UIImageView *remoteAnimation = [AnimatedGif getAnimationForGifAtUrl: remoteUrl];
+    
+    // For remote files you will need to specify the size in advance, as iOS_AnimatedGif
+    // does not support callbacks yet...
+    remoteAnimation.frame = CGRectMake(170.0f, 194.0f, 140.0f, 180.0f);
+    
+
+    // Add both examples to the view.
+	[self.view addSubview:localAnimation];
+	[self.view addSubview:remoteAnimation];
 
 License
 ---------
 The MIT License 
-
-Copyright (c) 2013 Alan Beebe 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: 
 
@@ -43,10 +50,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Changelog
 ---------
-2013-10-15: Added MIT License
-2012-11-14: Created GitHUB repo
+2014-06-11: A lot of compilation warnings fixed + ARC'ified and modernization by github.com/eimantas
 2010-03-16: Added queing mechanism for static class use
 2010-01-24: Rework of the entire module, adding static methods, better memory management and URL asynchronous loading
 2009-10-08: Added dealloc method, and removed leaks, by Pedro Silva
 2009-08-10: Fixed double release for array, by Christian Garbers
-2009-06-05: Initial Version based on work by Martin van Spanje
+2009-06-05: Initial Version
