@@ -15,18 +15,15 @@
 //
 //  Changelog:
 //
+//  2014-06-11: A lot of compilation warnings fixed + ARC'ified and modernization by github.com/eimantas
 //	2010-03-16: Added queing mechanism for static class use
 //  2010-01-24: Rework of the entire module, adding static methods, better memory management and URL asynchronous loading
 //  2009-10-08: Added dealloc method, and removed leaks, by Pedro Silva
 //  2009-08-10: Fixed double release for array, by Christian Garbers
 //  2009-06-05: Initial Version
 //
-//  Permission is given to use this source code file, free of charge, in any
-//  project, commercial or otherwise, entirely at your risk, with the condition
-//  that any redistribution (in part or whole) of source code must retain
-//  this copyright and permission notice. Attribution in compiled projects is
-//  appreciated but not required.
-//  
+//  Released under MIT license, see https://github.com/scspijker/iOS_AnimatedGif
+//
 
 #ifdef TARGET_OS_IPHONE			
 #import <UIKit/UIKit.h>

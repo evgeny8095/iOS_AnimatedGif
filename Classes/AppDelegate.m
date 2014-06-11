@@ -2,8 +2,10 @@
 //  AnimatedGifExampleAppDelegate.m
 //  AnimatedGifExample
 //
-//  Created by Stijn Spijker on 05-07-09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
+//  Created by Stijn Spijker (http://stijnspijker.nl/) on 2009-07-03.
+//  Based on gifdecode written april 2009 by Martin van Spanje, P-Edge media.
+//
+//  Released under MIT license, see https://github.com/scspijker/iOS_AnimatedGif
 //
 
 #import "AppDelegate.h"
