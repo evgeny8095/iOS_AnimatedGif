@@ -11,28 +11,32 @@
 #import "AnimatedGifExampleViewController.h"
 #import "AnimatedGif.h"
 
-static CGRect fileImageViewFrame = {{10.0f, 194.0f},{140.0f, 180.0f}};
-static CGRect urlImageViewFrame = {{170.0f, 194.0f},{140.0f, 180.0f}};
-
 @implementation AnimatedGifExampleViewController
 
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
     
-    // First example, a local file
-    NSURL 			* firstUrl = 		[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"apple_logo_animated" ofType:@"gif"]];
-    UIImageView 	* firstAnimation = 	[AnimatedGif getAnimationForGifAtUrl: firstUrl];
-    firstAnimation.frame =              fileImageViewFrame;
+    /* First example, a local file */
+    NSURL *localUrl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"apple_logo_animated" ofType:@"gif"]];
+    UIImageView *localAnimation = [AnimatedGif getAnimationForGifAtUrl: localUrl];
     
-    // Second example, through HTTP
-    NSURL 		* secondUrl = 			[NSURL URLWithString:@"http://i.imgur.com/vnwRc8V.gif"];
-    UIImageView * secondAnimation = 	[AnimatedGif getAnimationForGifAtUrl: secondUrl];
-    secondAnimation.frame =             urlImageViewFrame;
+    // For local files (that are loaded immediatly) you can request the size
+    localAnimation.frame = CGRectMake(10.0f, 194.0f, localAnimation.image.size.width, localAnimation.image.size.height);
     
-    // Add them to the view.
-	[self.view addSubview:firstAnimation];
-	[self.view addSubview:secondAnimation];
+
+    /* Second example, through HTTP */
+    NSURL *remoteUrl = [NSURL URLWithString:@"http://i.imgur.com/vnwRc8V.gif"];
+    UIImageView *remoteAnimation = [AnimatedGif getAnimationForGifAtUrl: remoteUrl];
+    
+    // For remote files you will need to specify the size in advance, as iOS_AnimatedGif
+    // does not support callbacks yet...
+    remoteAnimation.frame = CGRectMake(170.0f, 194.0f, 140.0f, 180.0f);
+    
+
+    // Add both examples to the view.
+	[self.view addSubview:localAnimation];
+	[self.view addSubview:remoteAnimation];
 }
 
 @end
