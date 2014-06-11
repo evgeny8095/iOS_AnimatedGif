@@ -20,10 +20,10 @@ Pod::Spec.new do |s|
   s.summary      = "Animated GIF library for iPhone. Based on original work by Martin van Spanje"
 
   s.description  = <<-DESC
-                   This library aims to make use of animated GIF's on iOS a lot easier.
-				   It includes original code by Martin van Spanje that parsed GIFs with a lot of improvements by the open source community. 
-				   This code now works according to GIF89a standards and supports transparency.
-				   LZW compression is not supported yet (pull requests welcome).
+ This library aims to make use of animated GIF's on iOS a lot easier.
+ It includes original code by Martin van Spanje that parsed GIFs with a lot of improvements by the open source community.
+ This code now works according to GIF89a standards and supports transparency.
+ LZW compression is not supported yet (pull requests welcome).
                    DESC
 
   s.homepage     = "https://github.com/scspijker/iOS_AnimatedGif"
